@@ -6,7 +6,7 @@
     <meta name="description" content="Join PANKAJ BHARDWAJ's official Telegram channel for professional stock market tips, Nifty/BankNifty options trading signals with 80-90% accuracy.">
     <title>PANKAJ BHARDWAJ | Stock Market Telegram Channel - Official Subscribe</title>
     
-    <!-- Meta Pixel Code (Pixel ID: 25899369116387339) -->
+    <!-- Meta Pixel Code (Pixel ID: 959568293171191) -->
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,11 +16,11 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '25899369116387339');
+        fbq('init', '959568293171191');
         fbq('track', 'PageView');
     </script>
     <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=PageView&noscript=1"/>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=959568293171191&ev=PageView&noscript=1"/>
     </noscript>
     <!-- End Meta Pixel Code -->
     
@@ -289,7 +289,7 @@
             </div>
         </div>
 
-        <!-- SUBSCRIBE BUTTON 1 - TOP (UPDATED TELEGRAM LINK) -->
+        <!-- SUBSCRIBE BUTTON 1 - TOP -->
         <div class="top-button">
             <a href="https://t.me/+iOCH2uAvvP9hNzc9" target="_blank" rel="noopener noreferrer" class="join-btn" id="subscribeTopBtn">
                 🔔 SUBSCRIBE NOW - JOIN TELEGRAM 🚀
@@ -338,7 +338,7 @@
             </div>
         </div>
 
-        <!-- SUBSCRIBE BUTTON 2 - BOTTOM (UPDATED TELEGRAM LINK) -->
+        <!-- SUBSCRIBE BUTTON 2 - BOTTOM -->
         <div class="bottom-button">
             <a href="https://t.me/+iOCH2uAvvP9hNzc9" target="_blank" rel="noopener noreferrer" class="join-btn" id="subscribeBottomBtn">
                 ⚡ SUBSCRIBE NOW & GET FREE DAILY PROFIT CALLS ⚡
@@ -362,27 +362,28 @@
 
 <!-- 
     ============================================================
-    COMPLETE FACEBOOK PIXEL EVENT TRACKING - 7 EVENTS
+    COMPLETE FACEBOOK PIXEL EVENT TRACKING - 8 EVENTS
     ============================================================
-    Pixel ID: 25899369116387339
+    Pixel ID: 959568293171191
     Telegram Link: https://t.me/+iOCH2uAvvP9hNzc9
-    Events Tracked (7 Total):
+    Events Tracked (8 Total):
     1. PageView (Enhanced - on load)
     2. Lead (Primary conversion - on button click)
     3. CompleteRegistration (Subscription intent)
-    4. SubscribeButtonClick (Custom event - detailed tracking)
-    5. TelegramJoinAttempt (Custom event - join attempt)
-    6. ViewContent (Engagement tracking)
-    7. SubscribeConversion (Custom event - final conversion)
+    4. Subscribe (Standard Meta Event)
+    5. SubscribeButtonClick (Custom event - detailed tracking)
+    6. TelegramJoinAttempt (Custom event - join attempt)
+    7. ViewContent (Engagement tracking)
+    8. SubscribeConversion (Custom event - final conversion)
 -->
 
 <script>
     (function() {
         // ============================================
-        // CONFIGURATION (UPDATED)
+        // CONFIGURATION
         // ============================================
         const CONFIG = {
-            PIXEL_ID: '25899369116387339',
+            PIXEL_ID: '959568293171191',
             TELEGRAM_LINK: 'https://t.me/+iOCH2uAvvP9hNzc9',
             TELEGRAM_CODE: 'iOCH2uAvvP9hNzc9',
             CHANNEL_NAME: 'PANKAJ_BHARDWAJ',
@@ -429,7 +430,7 @@
         };
         
         // ============================================
-        // MAIN TRACKING FUNCTION (7 Events per click)
+        // MAIN TRACKING FUNCTION (8 Events per click)
         // ============================================
         function fireCompleteSubscribeTracking(buttonElement) {
             if (!isFbqReady()) {
@@ -530,7 +531,7 @@
                 channel_name: CONFIG.CHANNEL_NAME
             });
             
-            // Event 8: Additional Custom Event - TelegramSubscribeIntent (extra tracking)
+            // Event 8: TelegramSubscribeIntent (Extra Tracking)
             fbq('trackCustom', 'TelegramSubscribeIntent', {
                 source: 'PANKAJ_BHARDWAJ_LANDING',
                 button_position: position,
@@ -555,7 +556,7 @@
         }
         
         // ============================================
-        // ATTACH CLICK HANDLERS (with deduplication)
+        // ATTACH CLICK HANDLERS
         // ============================================
         function attachSubscribeTracking(button, buttonName) {
             if (!button) {
@@ -575,14 +576,12 @@
                 isProcessing = true;
                 console.log('🔥 ' + buttonName + ' CLICKED - Firing all 8 tracking events...');
                 
-                // Fire all tracking events
                 fireCompleteSubscribeTracking(button);
                 
                 setTimeout(() => {
                     isProcessing = false;
                 }, 500);
                 
-                // Allow navigation to Telegram
                 return true;
             });
             
@@ -593,10 +592,10 @@
         attachSubscribeTracking(bottomSubscribeBtn, 'Bottom Subscribe Button (#subscribeBottomBtn)');
         
         // ============================================
-        // ADDITIONAL ENHANCEMENTS (Scroll Depth & Page Load Tracking)
+        // ADDITIONAL ENHANCEMENTS
         // ============================================
         if (isFbqReady()) {
-            // Scroll Depth Tracking for better engagement insights
+            // Scroll Depth Tracking
             let scrollTracked = { 25: false, 50: false, 75: false, 100: false };
             
             const trackScrollDepth = () => {
@@ -668,7 +667,7 @@
             if (topSubscribeBtn) buttonObserver.observe(topSubscribeBtn);
             if (bottomSubscribeBtn) buttonObserver.observe(bottomSubscribeBtn);
             
-            // Landing Page Fully Loaded Event
+            // Landing Page Loaded Event
             window.addEventListener('load', function() {
                 const loadTime = performance.now ? Math.round(performance.now()) : 0;
                 fbq('trackCustom', 'LandingPageLoaded', {
@@ -684,7 +683,7 @@
                 console.log('✅ Landing Page Fully Loaded (Load Time: ' + loadTime + 'ms)');
             });
             
-            // Enhanced PageView with additional context
+            // Enhanced PageView
             fbq('track', 'PageView', {
                 page_type: CONFIG.PAGE_TYPE,
                 creator: CONFIG.CHANNEL_NAME,
@@ -711,20 +710,20 @@
         });
         
         // ============================================
-        // CONSOLE STATUS & DEBUGGING
+        // CONSOLE STATUS
         // ============================================
-        console.log('%c🔥 PANKAJ BHARDWAJ | COMPLETE 8-EVENT FB PIXEL TRACKING ACTIVE 🔥', 'color: #ff9800; font-weight: bold; font-size: 14px;');
+        console.log('%c🔥 PANKAJ BHARDWAJ | 8-EVENT FB PIXEL TRACKING ACTIVE 🔥', 'color: #ff9800; font-weight: bold; font-size: 14px;');
         console.log('✅ Pixel ID: ' + CONFIG.PIXEL_ID);
         console.log('✅ Telegram Link: ' + CONFIG.TELEGRAM_LINK);
         console.log('✅ Invite Code: ' + CONFIG.TELEGRAM_CODE);
         console.log('✅ Device: ' + getDeviceType());
         console.log('✅ Total Events Tracked on Click: 8');
-        console.log('   Primary Events: Lead, CompleteRegistration, Subscribe');
-        console.log('   Secondary Events: SubscribeButtonClick, TelegramJoinAttempt, ViewContent, SubscribeConversion, TelegramSubscribeIntent');
-        console.log('✅ Additional Tracking: ScrollDepth, TimeOnPage, ButtonImpression, LandingPageLoaded');
+        console.log('   Primary: Lead, CompleteRegistration, Subscribe');
+        console.log('   Custom: SubscribeButtonClick, TelegramJoinAttempt, ViewContent, SubscribeConversion, TelegramSubscribeIntent');
+        console.log('✅ Additional: ScrollDepth, TimeOnPage, ButtonImpression, LandingPageLoaded');
         
         // ============================================
-        // DEBUG HELPER (type in console: pankajTracker.help())
+        // DEBUG HELPER
         // ============================================
         window.pankajTracker = {
             help: function() {
@@ -790,10 +789,10 @@
 
 <!-- Noscript fallback for additional event safety -->
 <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=Lead&noscript=1"/>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=CompleteRegistration&noscript=1"/>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=Subscribe&noscript=1"/>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=SubscribeButtonClick&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=959568293171191&ev=Lead&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=959568293171191&ev=CompleteRegistration&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=959568293171191&ev=Subscribe&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=959568293171191&ev=SubscribeButtonClick&noscript=1"/>
 </noscript>
 
 </body>
