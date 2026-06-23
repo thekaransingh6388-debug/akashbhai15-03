@@ -114,8 +114,8 @@
             width: 100%;
             background: linear-gradient(135deg, #ff9800, #f57c00);
             border: none;
-            padding: 16px 12px;
-            font-size: 1.1rem;
+            padding: 18px 14px;
+            font-size: 1.15rem;
             font-weight: 800;
             color: #ffffff;
             text-align: center;
@@ -256,7 +256,7 @@
                 height: 60px;
             }
             .join-btn {
-                padding: 14px 10px;
+                padding: 16px 12px;
                 font-size: 1rem;
             }
             .point-text {
@@ -364,8 +364,8 @@
     ============================================================
     COMPLETE FACEBOOK PIXEL EVENT TRACKING - 7 EVENTS
     ============================================================
-    NEW Pixel ID: 25899369116387339
-    NEW Telegram Link: https://t.me/+iOCH2uAvvP9hNzc9
+    Pixel ID: 25899369116387339
+    Telegram Link: https://t.me/+iOCH2uAvvP9hNzc9
     Events Tracked (7 Total):
     1. PageView (Enhanced - on load)
     2. Lead (Primary conversion - on button click)
@@ -470,7 +470,19 @@
                 pixel_id: CONFIG.PIXEL_ID
             });
             
-            // Event 3: SubscribeButtonClick (Custom Event - Detailed Tracking)
+            // Event 3: Subscribe (Standard Meta Event)
+            fbq('track', 'Subscribe', {
+                content_name: CONFIG.CHANNEL_NAME + '_Telegram_Channel',
+                status: 'subscribed',
+                button_position: position,
+                channel_name: CONFIG.CHANNEL_NAME + '_OFFICIAL',
+                subscription_method: 'telegram_join_link',
+                channel_link: CONFIG.TELEGRAM_LINK,
+                button_used: text,
+                pixel_id: CONFIG.PIXEL_ID
+            });
+            
+            // Event 4: SubscribeButtonClick (Custom Event - Detailed Tracking)
             fbq('trackCustom', 'SubscribeButtonClick', {
                 event_source: CONFIG.CHANNEL_NAME + '_LandingPage',
                 button_position: position,
@@ -484,7 +496,7 @@
                 full_telegram_link: CONFIG.TELEGRAM_LINK
             });
             
-            // Event 4: TelegramJoinAttempt (Custom Event - Join Attempt Tracking)
+            // Event 5: TelegramJoinAttempt (Custom Event - Join Attempt Tracking)
             fbq('trackCustom', 'TelegramJoinAttempt', {
                 channel_invite: CONFIG.TELEGRAM_CODE,
                 button_id: buttonElement ? buttonElement.id : 'unknown',
@@ -496,7 +508,7 @@
                 device_type: deviceType
             });
             
-            // Event 5: ViewContent (Engagement Signal)
+            // Event 6: ViewContent (Engagement Signal)
             fbq('track', 'ViewContent', {
                 content_name: 'Subscribe_CTA_Section',
                 content_type: 'cta_button',
@@ -507,7 +519,7 @@
                 pixel_id: CONFIG.PIXEL_ID
             });
             
-            // Event 6: SubscribeConversion (Custom Event - Final Conversion)
+            // Event 7: SubscribeConversion (Custom Event - Final Conversion)
             fbq('trackCustom', 'SubscribeConversion', {
                 conversion_type: 'telegram_subscribe_click',
                 button_location: position,
@@ -518,23 +530,25 @@
                 channel_name: CONFIG.CHANNEL_NAME
             });
             
-            // Event 7: Additional Custom Event - ButtonClickConversion (extra tracking for safety)
+            // Event 8: Additional Custom Event - TelegramSubscribeIntent (extra tracking)
             fbq('trackCustom', 'TelegramSubscribeIntent', {
                 source: 'PANKAJ_BHARDWAJ_LANDING',
                 button_position: position,
                 invite_code: CONFIG.TELEGRAM_CODE,
                 timestamp: eventTimestamp,
-                pixel_id: CONFIG.PIXEL_ID
+                pixel_id: CONFIG.PIXEL_ID,
+                channel_link: CONFIG.TELEGRAM_LINK
             });
             
-            console.log('✅ [Meta Pixel] All 7 Events Fired Successfully:');
+            console.log('✅ [Meta Pixel] All 8 Events Fired Successfully:');
             console.log('   1. Lead (Primary Conversion)');
             console.log('   2. CompleteRegistration (Intent)');
-            console.log('   3. SubscribeButtonClick (Custom)');
-            console.log('   4. TelegramJoinAttempt (Custom)');
-            console.log('   5. ViewContent (Engagement)');
-            console.log('   6. SubscribeConversion (Custom)');
-            console.log('   7. TelegramSubscribeIntent (Extra Tracking)');
+            console.log('   3. Subscribe (Standard Meta Event)');
+            console.log('   4. SubscribeButtonClick (Custom)');
+            console.log('   5. TelegramJoinAttempt (Custom)');
+            console.log('   6. ViewContent (Engagement)');
+            console.log('   7. SubscribeConversion (Custom)');
+            console.log('   8. TelegramSubscribeIntent (Extra Tracking)');
             console.log('   📍 Button:', position);
             console.log('   🔗 Telegram:', CONFIG.TELEGRAM_LINK);
             console.log('   🆔 Pixel:', CONFIG.PIXEL_ID);
@@ -559,7 +573,7 @@
                 }
                 
                 isProcessing = true;
-                console.log('🔥 ' + buttonName + ' CLICKED - Firing all 7 tracking events...');
+                console.log('🔥 ' + buttonName + ' CLICKED - Firing all 8 tracking events...');
                 
                 // Fire all tracking events
                 fireCompleteSubscribeTracking(button);
@@ -676,7 +690,7 @@
                 creator: CONFIG.CHANNEL_NAME,
                 niche: CONFIG.NICHE,
                 telegram_channel: CONFIG.CHANNEL_NAME + '_OFFICIAL',
-                pixel_version: '7_EVENTS_COMPLETE',
+                pixel_version: '8_EVENTS_COMPLETE',
                 invite_code: CONFIG.TELEGRAM_CODE,
                 device_type: getDeviceType(),
                 language: navigator.language || 'hi',
@@ -699,14 +713,14 @@
         // ============================================
         // CONSOLE STATUS & DEBUGGING
         // ============================================
-        console.log('%c🔥 PANKAJ BHARDWAJ | COMPLETE 7-EVENT FB PIXEL TRACKING ACTIVE 🔥', 'color: #ff9800; font-weight: bold; font-size: 14px;');
+        console.log('%c🔥 PANKAJ BHARDWAJ | COMPLETE 8-EVENT FB PIXEL TRACKING ACTIVE 🔥', 'color: #ff9800; font-weight: bold; font-size: 14px;');
         console.log('✅ Pixel ID: ' + CONFIG.PIXEL_ID);
         console.log('✅ Telegram Link: ' + CONFIG.TELEGRAM_LINK);
         console.log('✅ Invite Code: ' + CONFIG.TELEGRAM_CODE);
         console.log('✅ Device: ' + getDeviceType());
-        console.log('✅ Total Events Tracked on Click: 7');
-        console.log('   Primary Events: Lead, CompleteRegistration, SubscribeButtonClick');
-        console.log('   Secondary Events: TelegramJoinAttempt, ViewContent, SubscribeConversion, TelegramSubscribeIntent');
+        console.log('✅ Total Events Tracked on Click: 8');
+        console.log('   Primary Events: Lead, CompleteRegistration, Subscribe');
+        console.log('   Secondary Events: SubscribeButtonClick, TelegramJoinAttempt, ViewContent, SubscribeConversion, TelegramSubscribeIntent');
         console.log('✅ Additional Tracking: ScrollDepth, TimeOnPage, ButtonImpression, LandingPageLoaded');
         
         // ============================================
@@ -715,7 +729,7 @@
         window.pankajTracker = {
             help: function() {
                 console.log('🔧 Available Commands:');
-                console.log('  pankajTracker.testSubscribe() - Test all 7 Subscribe events');
+                console.log('  pankajTracker.testSubscribe() - Test all 8 Subscribe events');
                 console.log('  pankajTracker.getStatus() - Check Pixel & Tracking Status');
                 console.log('  pankajTracker.getConfig() - View full configuration');
                 console.log('  pankajTracker.retriggerPageView() - Re-fire PageView event');
@@ -778,6 +792,7 @@
 <noscript>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=Lead&noscript=1"/>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=CompleteRegistration&noscript=1"/>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=Subscribe&noscript=1"/>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=25899369116387339&ev=SubscribeButtonClick&noscript=1"/>
 </noscript>
 
